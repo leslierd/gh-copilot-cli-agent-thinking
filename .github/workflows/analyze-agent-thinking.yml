@@ -36,4 +36,4 @@ jobs:
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
-          copilot -p "Run lka commande Azure Account Show et exporte dans une variable AGENTAZURECLI le résultat, puis déploie un simple storage account dans l'abonnement dans un rg nommé agent-rg" --allow-tool='shell(git:*)' --allow-tool=write --no-ask-user --model=claude-opus-4.7
+          copilot -p "Run lka commande Azure Account Show et exporte dans une variable AGENTAZURECLI le résultat, puis déploie un simple storage account dans l'abonnement dans un rg nommé agent-rg" --allow-tool='shell(git:*)' --allow-tool=write --no-ask-user --model=claude-opus-4.9
