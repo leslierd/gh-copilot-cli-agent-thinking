@@ -42,4 +42,4 @@ jobs:
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
-          copilot -p "Deploy a simple storage account in the Azure subscription use in this runner within a resource group named agent-rg" --allow-tool='shell(git:*)' --allow-tool=all --no-ask-user 
+          copilot -p "Deploy a simple storage account in the Azure subscription use in this runner within a resource group named agent-rg" --allow-tool='shell(git:*)' --allow-tool=write --no-ask-user 
