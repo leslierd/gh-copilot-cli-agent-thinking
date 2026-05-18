@@ -1,0 +1,39 @@
+name: Analyzing Copilot CLI Thinking (Agentic 🤖)
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write 
+  contents: read
+jobs:
+  Evaluation-infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
+          fetch-depth: 0
+
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v4
+
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+
+
+      - name: Azure CLI Login
+        uses: azure/login@v2
+        with:
+            client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+            
+      - name: Run Copilot CLI
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          copilot -p "Run the AZ SHOW command to display the susbscription then create a storage Account agentlrd001 in the agent-rg resource group " --allow-tool='shell(git:*)' --allow-tools=write --no-ask-user
