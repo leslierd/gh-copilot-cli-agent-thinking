@@ -6,7 +6,7 @@ permissions:
   id-token: write 
   contents: read
 jobs:
-  Evaluation-infra:
+  Analyzing .....:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
