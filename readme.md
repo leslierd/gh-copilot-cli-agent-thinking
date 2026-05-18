@@ -31,4 +31,4 @@ This lab demonstrates how an AI agent approaches a seemingly simple task, focusi
 
 ## Disclaimer
 
-This repository is for educational purposes only. The workflows and commands are designed to demonstrate AI reasoning and should not be used in production environments without proper review and testing.
+This repository is for educational purposes only. The workflows and commands are designed to demonstrate AI reasoning and should not be used in production environments without proper review and testing. 
